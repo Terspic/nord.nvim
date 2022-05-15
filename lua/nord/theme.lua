@@ -34,6 +34,9 @@ theme.loadSyntax = function()
 		Error = { fg = nord.nord11_gui, bg = nord.none, style = "bold,underline" }, -- any erroneous construct
 		Todo = { fg = nord.nord13_gui, bg = nord.none, style = "bold,italic" }, -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 		Conceal = { fg = nord.none, bg = nord.nord0_gui },
+		Function = { fg = nord.nord8_gui }, -- normal function names
+		Conditional = { fg = nord.nord9_gui }, -- normal if, then, else, endif, switch, etc.
+		Repeat = { fg = nord.nord9_gui }, -- normal any other keyword
 
 		htmlLink = { fg = nord.nord14_gui, style = "underline" },
 		htmlH1 = { fg = nord.nord8_gui, style = "bold" },
@@ -52,18 +55,11 @@ theme.loadSyntax = function()
 	-- Italic comments
 	if vim.g.nord_italic == false then
 		syntax.Comment = { fg = nord.nord3_gui_bright } -- normal comments
-		syntax.Conditional = { fg = nord.nord9_gui } -- normal if, then, else, endif, switch, etc.
-		syntax.Function = { fg = nord.nord8_gui } -- normal function names
 		syntax.Identifier = { fg = nord.nord9_gui } -- any variable name
-		syntax.Keyword = { fg = nord.nord9_gui } -- normal for, do, while, etc.
-		syntax.Repeat = { fg = nord.nord9_gui } -- normal any other keyword
 		syntax.String = { fg = nord.nord14_gui } -- any string
 	else
 		syntax.Comment = { fg = nord.nord3_gui_bright, bg = nord.none, style = "italic" } -- italic comments
-		syntax.Conditional = { fg = nord.nord9_gui, bg = nord.none, style = "italic" } -- italic if, then, else, endif, switch, etc.
 		syntax.Identifier = { fg = nord.nord9_gui, bg = nord.none, style = "italic" } -- any variable name
-		syntax.Keyword = { fg = nord.nord9_gui, bg = nord.none, style = "italic" } -- italic for, do, while, etc.
-		syntax.Repeat = { fg = nord.nord9_gui, bg = nord.none, style = "italic" } -- italic any other keyword
 		syntax.String = { fg = nord.nord14_gui, bg = nord.none, style = "italic" } -- any string
 	end
 
@@ -237,6 +233,17 @@ theme.loadTreeSitter = function()
 		TSFloat = { fg = nord.nord15_gui }, -- For floats
 		TSNumber = { fg = nord.nord15_gui }, -- For all number
 
+		TSKeyword = { fg = nord.nord9_gui, style = "bold" },
+		TSKeywordReturn = { fg = nord.nord9_gui, style = "bold" },
+		TSConditional = { fg = nord.nord9_gui, style = "bold" }, -- For keywords related to conditionnals.
+		TSKeywordFunction = { fg = nord.nord8_gui },
+		TSKeywordOperator = { fg = nord.nord8_gui },
+		TSRepeat = { fg = nord.nord9_gui, style = "bold" }, -- For keywords related to loops.
+		TSFunction = { fg = nord.nord8_gui }, -- For fuction (calls and definitions).
+		TSMethod = { fg = nord.nord7_gui }, -- For method calls and definitions.
+		TSFuncBuiltin = { fg = nord.nord8_gui },
+		TSNamespace = { fg = nord.nord4_gui }, -- For identifiers referring to modules and namespaces.
+
 		TSAttribute = { fg = nord.nord15_gui }, -- (unstable) TODO: docs
 		TSVariable = { fg = nord.nord4_gui, style = "bold" }, -- Any variable name that does not have another highlight.
 		TSVariableBuiltin = { fg = nord.nord4_gui, style = "bold" },
@@ -249,7 +256,7 @@ theme.loadTreeSitter = function()
 		TSInclude = { fg = nord.nord9_gui }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
 		TSLabel = { fg = nord.nord15_gui }, -- For labels: `label:` in C and `:label:` in Lua.
 		TSOperator = { fg = nord.nord9_gui }, -- For any operator: `+`, but also `->` and `*` in C.
-		TSParameter = { fg = nord.nord10_gui }, -- For parameters of a function.
+		TSParameter = { fg = nord.nord4_gui, style = "bold" }, -- For parameters of a function.
 		TSParameterReference = { fg = nord.nord10_gui }, -- For references to parameters of a function.
 		TSPunctDelimiter = { fg = nord.nord5_gui }, -- For delimiters ie: `.`
 		TSPunctBracket = { fg = nord.nord5_gui }, -- For brackets and parens.
@@ -272,22 +279,9 @@ theme.loadTreeSitter = function()
 	if vim.g.nord_italic == false then
 		-- Comments
 		treesitter.TSComment = { fg = nord.nord3_gui_bright }
-		-- Conditionals
-		treesitter.TSConditional = { fg = nord.nord9_gui } -- For keywords related to conditionnals.
-		-- Function names
-		treesitter.TSFunction = { fg = nord.nord8_gui } -- For fuction (calls and definitions).
-		treesitter.TSMethod = { fg = nord.nord7_gui } -- For method calls and definitions.
-		treesitter.TSFuncBuiltin = { fg = nord.nord8_gui }
 		-- Namespaces and property accessors
-		treesitter.TSNamespace = { fg = nord.nord4_gui } -- For identifiers referring to modules and namespaces.
 		treesitter.TSField = { fg = nord.nord4_gui } -- For fields in literals
 		treesitter.TSProperty = { fg = nord.nord10_gui } -- Same as `TSField`
-		-- Language keywords
-		treesitter.TSKeyword = { fg = nord.nord9_gui } -- For keywords that don't fall in other categories.
-		treesitter.TSKeywordFunction = { fg = nord.nord8_gui }
-		treesitter.TSKeywordReturn = { fg = nord.nord8_gui }
-		treesitter.TSKeywordOperator = { fg = nord.nord8_gui }
-		treesitter.TSRepeat = { fg = nord.nord9_gui } -- For keywords related to loops.
 		-- Strings
 		treesitter.TSString = { fg = nord.nord14_gui } -- For strings.
 		treesitter.TSStringRegex = { fg = nord.nord7_gui } -- For regexes.
@@ -296,22 +290,9 @@ theme.loadTreeSitter = function()
 	else
 		-- Comments
 		treesitter.TSComment = { fg = nord.nord3_gui_bright, style = "italic" }
-		-- Conditionals
-		treesitter.TSConditional = { fg = nord.nord9_gui, style = "italic" } -- For keywords related to conditionnals.
-		-- Function names
-		treesitter.TSFunction = { fg = nord.nord8_gui, style = "italic" } -- For fuction (calls and definitions).
-		treesitter.TSMethod = { fg = nord.nord7_gui, style = "italic" } -- For method calls and definitions.
-		treesitter.TSFuncBuiltin = { fg = nord.nord8_gui, style = "italic" }
 		-- Namespaces and property accessors
-		treesitter.TSNamespace = { fg = nord.nord4_gui, style = "italic" } -- For identifiers referring to modules and namespaces.
 		treesitter.TSField = { fg = nord.nord4_gui, style = "italic" } -- For fields.
 		treesitter.TSProperty = { fg = nord.nord10_gui, style = "italic" } -- Same as `TSField`, but when accessing, not declaring.
-		-- Language keywords
-		treesitter.TSKeyword = { fg = nord.nord9_gui, style = "italic" } -- For keywords that don't fall in other categories.
-		treesitter.TSKeywordFunction = { fg = nord.nord8_gui, style = "italic" }
-		treesitter.TSKeywordReturn = { fg = nord.nord8_gui, style = "italic" }
-		treesitter.TSKeywordOperator = { fg = nord.nord8_gui, style = "italic" }
-		treesitter.TSRepeat = { fg = nord.nord9_gui, style = "italic" } -- For keywords related to loops.
 		-- Strings
 		treesitter.TSString = { fg = nord.nord14_gui, style = "italic" } -- For strings.
 		treesitter.TSStringRegex = { fg = nord.nord7_gui, style = "italic" } -- For regexes.
