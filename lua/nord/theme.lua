@@ -61,7 +61,6 @@ theme.loadSyntax = function()
 	else
 		syntax.Comment = { fg = nord.nord3_gui_bright, bg = nord.none, style = "italic" } -- italic comments
 		syntax.Conditional = { fg = nord.nord9_gui, bg = nord.none, style = "italic" } -- italic if, then, else, endif, switch, etc.
-		syntax.Function = { fg = nord.nord8_gui, bg = nord.none, style = "italic" } -- italic funtion names
 		syntax.Identifier = { fg = nord.nord9_gui, bg = nord.none, style = "italic" } -- any variable name
 		syntax.Keyword = { fg = nord.nord9_gui, bg = nord.none, style = "italic" } -- italic for, do, while, etc.
 		syntax.Repeat = { fg = nord.nord9_gui, bg = nord.none, style = "italic" } -- italic any other keyword
@@ -85,7 +84,7 @@ theme.loadEditor = function()
 		DiffAdd = { fg = nord.nord14_gui, bg = nord.none, style = "reverse" }, -- diff mode: Added line
 		DiffChange = { fg = nord.nord13_gui, bg = nord.none, style = "reverse" }, --  diff mode: Changed line
 		DiffDelete = { fg = nord.nord11_gui, bg = nord.none, style = "reverse" }, -- diff mode: Deleted line
-		DiffText = { fg = nord.nord15_gui, bg = nord.none, style = "reverse" }, -- diff mode: Changed text within a changed line
+		DiffText = { fg = nord.nord13_gui, bg = nord.none, style = "reverse" }, -- diff mode: Changed text within a changed line
 		EndOfBuffer = { fg = nord.nord1_gui },
 		ErrorMsg = { fg = nord.none },
 		Folded = { fg = nord.nord3_gui_bright, bg = nord.none, style = "italic" },
@@ -120,7 +119,7 @@ theme.loadEditor = function()
 		Title = { fg = nord.nord14_gui, bg = nord.none, style = "bold" },
 		Visual = { fg = nord.none, bg = nord.nord2_gui },
 		VisualNOS = { fg = nord.none, bg = nord.nord2_gui },
-		WarningMsg = { fg = nord.nord15_gui },
+		WarningMsg = { fg = nord.nord13_gui },
 		WildMenu = { fg = nord.nord12_gui, bg = nord.none, style = "bold" },
 		CursorColumn = { fg = nord.none, bg = nord.cursorlinefg },
 		CursorLine = { fg = nord.none, bg = nord.cursorlinefg },
@@ -131,11 +130,11 @@ theme.loadEditor = function()
 		ReplacelMode = { fg = nord.nord11_gui, bg = nord.none, style = "reverse" },
 		VisualMode = { fg = nord.nord9_gui, bg = nord.none, style = "reverse" },
 		CommandMode = { fg = nord.nord4_gui, bg = nord.none, style = "reverse" },
-		Warnings = { fg = nord.nord15_gui },
+		Warnings = { fg = nord.nord13_gui },
 
 		healthError = { fg = nord.nord11_gui },
 		healthSuccess = { fg = nord.nord14_gui },
-		healthWarning = { fg = nord.nord15_gui },
+		healthWarning = { fg = nord.nord13_gui },
 
 		-- dashboard
 		DashboardShortCut = { fg = nord.nord7_gui },
@@ -146,7 +145,7 @@ theme.loadEditor = function()
 		-- BufferLine
 		BufferLineIndicatorSelected = { fg = nord.nord0_gui },
 		BufferLineFill = { bg = nord.nord0_gui },
-		
+
 		-- Barbar
 		BufferTabpageFill = { bg = nord.nord0_gui },
 
@@ -233,7 +232,6 @@ theme.loadTreeSitter = function()
 	-- TreeSitter highlight groups
 
 	local treesitter = {
-		TSAnnotation = { fg = nord.nord12_gui }, -- For C++/Dart attributes, annotations thatcan be attached to the code to denote some kind of meta information.
 		TSConstructor = { fg = nord.nord9_gui }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
 		TSConstant = { fg = nord.nord13_gui }, -- For constants
 		TSFloat = { fg = nord.nord15_gui }, -- For floats
@@ -253,9 +251,9 @@ theme.loadTreeSitter = function()
 		TSOperator = { fg = nord.nord9_gui }, -- For any operator: `+`, but also `->` and `*` in C.
 		TSParameter = { fg = nord.nord10_gui }, -- For parameters of a function.
 		TSParameterReference = { fg = nord.nord10_gui }, -- For references to parameters of a function.
-		TSPunctDelimiter = { fg = nord.nord8_gui }, -- For delimiters ie: `.`
-		TSPunctBracket = { fg = nord.nord8_gui }, -- For brackets and parens.
-		TSPunctSpecial = { fg = nord.nord8_gui }, -- For special punctutation that does not fall in the catagories before.
+		TSPunctDelimiter = { fg = nord.nord5_gui }, -- For delimiters ie: `.`
+		TSPunctBracket = { fg = nord.nord5_gui }, -- For brackets and parens.
+		TSPunctSpecial = { fg = nord.nord5_gui }, -- For special punctutation that does not fall in the catagories before.
 		TSSymbol = { fg = nord.nord15_gui }, -- For identifiers referring to symbols or atoms.
 		TSType = { fg = nord.nord9_gui }, -- For types.
 		TSTypeBuiltin = { fg = nord.nord9_gui }, -- For builtin types.
@@ -333,11 +331,11 @@ theme.loadLSP = function()
 		LspDiagnosticsFloatingError = { fg = nord.nord11_gui }, -- used for "Error" diagnostic messages in the diagnostics float
 		LspDiagnosticsVirtualTextError = { fg = nord.nord11_gui }, -- Virtual text "Error"
 		LspDiagnosticsUnderlineError = { style = "undercurl", sp = nord.nord11_gui }, -- used to underline "Error" diagnostics.
-		LspDiagnosticsDefaultWarning = { fg = nord.nord15_gui }, -- used for "Warning" diagnostic signs in sign column
-		LspDiagnosticsSignWarning = { fg = nord.nord15_gui }, -- used for "Warning" diagnostic signs in sign column
-		LspDiagnosticsFloatingWarning = { fg = nord.nord15_gui }, -- used for "Warning" diagnostic messages in the diagnostics float
-		LspDiagnosticsVirtualTextWarning = { fg = nord.nord15_gui }, -- Virtual text "Warning"
-		LspDiagnosticsUnderlineWarning = { style = "undercurl", sp = nord.nord15_gui }, -- used to underline "Warning" diagnostics.
+		LspDiagnosticsDefaultWarning = { fg = nord.nord13_gui }, -- used for "Warning" diagnostic signs in sign column
+		LspDiagnosticsSignWarning = { fg = nord.nord13_gui }, -- used for "Warning" diagnostic signs in sign column
+		LspDiagnosticsFloatingWarning = { fg = nord.nord13_gui }, -- used for "Warning" diagnostic messages in the diagnostics float
+		LspDiagnosticsVirtualTextWarning = { fg = nord.nord13_gui }, -- Virtual text "Warning"
+		LspDiagnosticsUnderlineWarning = { style = "undercurl", sp = nord.nord13_gui }, -- used to underline "Warning" diagnostics.
 		LspDiagnosticsDefaultInformation = { fg = nord.nord10_gui }, -- used for "Information" diagnostic virtual text
 		LspDiagnosticsSignInformation = { fg = nord.nord10_gui }, -- used for "Information" diagnostic signs in sign column
 		LspDiagnosticsFloatingInformation = { fg = nord.nord10_gui }, -- used for "Information" diagnostic messages in the diagnostics float
@@ -390,7 +388,7 @@ theme.loadPlugins = function()
 		-- Diff
 		diffAdded = { fg = nord.nord14_gui },
 		diffRemoved = { fg = nord.nord11_gui },
-		diffChanged = { fg = nord.nord15_gui },
+		diffChanged = { fg = nord.nord13_gui },
 		diffOldFile = { fg = nord.yelow },
 		diffNewFile = { fg = nord.nord12_gui },
 		diffFile = { fg = nord.nord7_gui },
@@ -408,16 +406,16 @@ theme.loadPlugins = function()
 
 		-- GitGutter
 		GitGutterAdd = { fg = nord.nord14_gui }, -- diff mode: Added line |diff.txt|
-		GitGutterChange = { fg = nord.nord15_gui }, -- diff mode: Changed line |diff.txt|
+		GitGutterChange = { fg = nord.nord13_gui }, -- diff mode: Changed line |diff.txt|
 		GitGutterDelete = { fg = nord.nord11_gui }, -- diff mode: Deleted line |diff.txt|
 
 		-- GitSigns
 		GitSignsAdd = { fg = nord.nord14_gui }, -- diff mode: Added line |diff.txt|
 		GitSignsAddNr = { fg = nord.nord14_gui }, -- diff mode: Added line |diff.txt|
 		GitSignsAddLn = { fg = nord.nord14_gui }, -- diff mode: Added line |diff.txt|
-		GitSignsChange = { fg = nord.nord15_gui }, -- diff mode: Changed line |diff.txt|
-		GitSignsChangeNr = { fg = nord.nord15_gui }, -- diff mode: Changed line |diff.txt|
-		GitSignsChangeLn = { fg = nord.nord15_gui }, -- diff mode: Changed line |diff.txt|
+		GitSignsChange = { fg = nord.nord13_gui }, -- diff mode: Changed line |diff.txt|
+		GitSignsChangeNr = { fg = nord.nord13_gui }, -- diff mode: Changed line |diff.txt|
+		GitSignsChangeLn = { fg = nord.nord13_gui }, -- diff mode: Changed line |diff.txt|
 		GitSignsDelete = { fg = nord.nord11_gui }, -- diff mode: Deleted line |diff.txt|
 		GitSignsDeleteNr = { fg = nord.nord11_gui }, -- diff mode: Deleted line |diff.txt|
 		GitSignsDeleteLn = { fg = nord.nord11_gui }, -- diff mode: Deleted line |diff.txt|
@@ -431,7 +429,7 @@ theme.loadPlugins = function()
 		TelescopeMatching = { fg = nord.nord8_gui },
 
 		LspDiagnosticsError = { fg = nord.nord11_gui },
-		LspDiagnosticsWarning = { fg = nord.nord15_gui },
+		LspDiagnosticsWarning = { fg = nord.nord13_gui },
 		LspDiagnosticsInformation = { fg = nord.nord10_gui },
 		LspDiagnosticsHint = { fg = nord.nord9_gui },
 
@@ -445,7 +443,7 @@ theme.loadPlugins = function()
 
 		-- LspSaga
 		DiagnosticError = { fg = nord.nord11_gui },
-		DiagnosticWarning = { fg = nord.nord15_gui },
+		DiagnosticWarning = { fg = nord.nord13_gui },
 		DiagnosticInformation = { fg = nord.nord10_gui },
 		DiagnosticHint = { fg = nord.nord9_gui },
 		DiagnosticTruncateLine = { fg = nord.nord4_gui },
