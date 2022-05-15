@@ -1,37 +1,28 @@
-local colors = require("nord.colors")
-
-local nord = {}
-
-nord.normal = {
-	a = { fg = colors.nord1_gui, bg = colors.nord9_gui },
-	b = { fg = colors.nord5_gui, bg = colors.nord2_gui },
-	c = { fg = colors.nord4_gui, bg = colors.nord1_gui },
+-- Copyright (c) 2020-2021 shadmansaleh
+-- MIT license, see LICENSE for more details.
+-- stylua: ignore
+local colors = {
+  nord1  = '#3B4252',
+  nord3  = '#4C566A',
+  nord5  = '#E5E9F0',
+  nord6  = '#ECEFF4',
+  nord7  = '#8FBCBB',
+  nord8  = '#88C0D0',
+  nord13 = '#EBCB8B',
 }
 
-nord.insert = {
-	a = { fg = colors.nord1_gui, bg = colors.nord4_gui },
-	b = { fg = colors.nord6_gui, bg = colors.nord3_gui_bright },
+return {
+  normal = {
+    a = { fg = colors.nord1, bg = colors.nord8, gui = 'bold' },
+    b = { fg = colors.nord5, bg = colors.nord1 },
+    c = { fg = colors.nord5, bg = colors.nord3 },
+  },
+  insert = { a = { fg = colors.nord1, bg = colors.nord6, gui = 'bold' } },
+  visual = { a = { fg = colors.nord1, bg = colors.nord7, gui = 'bold' } },
+  replace = { a = { fg = colors.nord1, bg = colors.nord13, gui = 'bold' } },
+  inactive = {
+    a = { fg = colors.nord1, bg = colors.nord8, gui = 'bold' },
+    b = { fg = colors.nord5, bg = colors.nord1 },
+    c = { fg = colors.nord5, bg = colors.nord1 },
+  },
 }
-
-nord.visual = {
-	a = { fg = colors.nord0_gui, bg = colors.nord9_gui },
-	b = { fg = colors.nord4_gui, bg = colors.nord10_gui },
-}
-
-nord.replace = {
-	a = { fg = colors.nord0_gui, bg = colors.nord11_gui },
-	b = { fg = colors.nord4_gui, bg = colors.nord10_gui },
-}
-
-nord.command = {
-	a = { fg = colors.nord0_gui, bg = colors.nord15_gui, gui = "bold" },
-	b = { fg = colors.nord4_gui, bg = colors.nord10_gui },
-}
-
-nord.inactive = {
-	a = { fg = colors.nord4_gui, bg = colors.nord0_gui, gui = "bold" },
-	b = { fg = colors.nord4_gui, bg = colors.nord0_gui },
-	c = { fg = colors.nord4_gui, bg = colors.nord1_gui },
-}
-
-return nord
