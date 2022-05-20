@@ -8,12 +8,13 @@ local colors = {
   nord6  = '#ECEFF4',
   nord7  = '#8FBCBB',
   nord8  = '#88C0D0',
+  nord9  = '#81A1C1',
   nord13 = '#EBCB8B',
 }
 
 return {
   normal = {
-    a = { fg = colors.nord1, bg = colors.nord8, gui = 'bold' },
+    a = { fg = colors.nord1, bg = colors.nord9, gui = 'bold' },
     b = { fg = colors.nord5, bg = colors.nord1 },
     c = { fg = colors.nord5, bg = colors.nord3 },
   },
@@ -21,7 +22,7 @@ return {
   visual = { a = { fg = colors.nord1, bg = colors.nord7, gui = 'bold' } },
   replace = { a = { fg = colors.nord1, bg = colors.nord13, gui = 'bold' } },
   inactive = {
-    a = { fg = colors.nord1, bg = colors.nord8, gui = 'bold' },
+    a = { fg = colors.nord1, bg = colors.nord9, gui = 'bold' },
     b = { fg = colors.nord5, bg = colors.nord1 },
     c = { fg = colors.nord5, bg = colors.nord1 },
   },

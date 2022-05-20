@@ -8,10 +8,10 @@ theme.loadSyntax = function()
 		Type = { fg = nord.nord9_gui }, -- int, long, char, etc.
 		StorageClass = { fg = nord.nord9_gui }, -- static, register, volatile, etc.
 		Structure = { fg = nord.nord9_gui }, -- struct, union, enum, etc.
-		Constant = { fg = nord.nord4_gui }, -- any constant
+		Constant = { fg = nord.nord13_gui }, -- any constant
 		Character = { fg = nord.nord14_gui }, -- any character constant: 'c', '\n'
 		Number = { fg = nord.nord15_gui }, -- a number constant: 5
-		Boolean = { fg = nord.nord9_gui }, -- a boolean constant: TRUE, false
+		Boolean = { fg = nord.nord15_gui }, -- a boolean constant: TRUE, false
 		Float = { fg = nord.nord15_gui }, -- a floating point constant: 2.3e10
 		Statement = { fg = nord.nord9_gui }, -- any statement
 		Label = { fg = nord.nord9_gui }, -- case, default, etc.
@@ -20,7 +20,7 @@ theme.loadSyntax = function()
 		PreProc = { fg = nord.nord9_gui }, -- generic Preprocessor
 		Include = { fg = nord.nord9_gui }, -- preprocessor #include
 		Define = { fg = nord.nord9_gui }, -- preprocessor #define
-		Macro = { fg = nord.nord9_gui }, -- same as Define
+		Macro = { fg = nord.nord7_gui }, -- same as Define
 		Typedef = { fg = nord.nord9_gui }, -- A typedef
 		PreCondit = { fg = nord.nord13_gui }, -- preprocessor #if, #else, #endif, etc.
 		Special = { fg = nord.nord4_gui }, -- any special symbol
@@ -228,27 +228,27 @@ theme.loadTreeSitter = function()
 	-- TreeSitter highlight groups
 
 	local treesitter = {
-		TSConstructor = { fg = nord.nord9_gui }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-		TSConstant = { fg = nord.nord13_gui }, -- For constants
+		TSConstructor = { fg = nord.nord8_gui }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+		TSConstant = { fg = nord.nord13_gui, style = "bold" }, -- For constants
 		TSFloat = { fg = nord.nord15_gui }, -- For floats
 		TSNumber = { fg = nord.nord15_gui }, -- For all number
 
 		TSKeyword = { fg = nord.nord9_gui, style = "bold" },
 		TSKeywordReturn = { fg = nord.nord9_gui, style = "bold" },
 		TSConditional = { fg = nord.nord9_gui, style = "bold" }, -- For keywords related to conditionnals.
-		TSKeywordFunction = { fg = nord.nord8_gui },
-		TSKeywordOperator = { fg = nord.nord8_gui },
+		TSKeywordFunction = { fg = nord.nord9_gui, style = "bold" },
+		TSKeywordOperator = { fg = nord.nord9_gui, style = "bold" },
 		TSRepeat = { fg = nord.nord9_gui, style = "bold" }, -- For keywords related to loops.
 		TSFunction = { fg = nord.nord8_gui }, -- For fuction (calls and definitions).
-		TSMethod = { fg = nord.nord7_gui }, -- For method calls and definitions.
-		TSFuncBuiltin = { fg = nord.nord8_gui },
+		TSMethod = { fg = nord.nord8_gui }, -- For method calls and definitions.
+		TSFuncBuiltin = { fg = nord.nord12_gui },
 		TSNamespace = { fg = nord.nord4_gui }, -- For identifiers referring to modules and namespaces.
 
-		TSAttribute = { fg = nord.nord15_gui }, -- (unstable) TODO: docs
-		TSVariable = { fg = nord.nord4_gui, style = "bold" }, -- Any variable name that does not have another highlight.
-		TSVariableBuiltin = { fg = nord.nord4_gui, style = "bold" },
-		TSBoolean = { fg = nord.nord9_gui, style = "bold" }, -- For booleans.
-		TSConstBuiltin = { fg = nord.nord7_gui, style = "bold" }, -- For constant that are built in the language: `nil` in Lua.
+		TSAttribute = { fg = nord.nord12_gui, style = "bold" }, -- (unstable) TODO: docs
+		TSVariable = { fg = nord.nord4_gui }, -- Any variable name that does not have another highlight.
+		TSVariableBuiltin = { fg = nord.nord12_gui},
+		TSBoolean = { fg = nord.nord15_gui }, -- For booleans.
+		TSConstBuiltin = { fg = nord.nord13_gui, style = "bold" }, -- For constant that are built in the language: `nil` in Lua.
 		TSConstMacro = { fg = nord.nord7_gui, style = "bold" }, -- For constants that are defined by macros: `NULL` in C.
 		TSError = { fg = nord.nord11_gui }, -- For syntax/parser errors.
 		TSException = { fg = nord.nord15_gui }, -- For exception related keywords.
@@ -256,7 +256,7 @@ theme.loadTreeSitter = function()
 		TSInclude = { fg = nord.nord9_gui }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
 		TSLabel = { fg = nord.nord15_gui }, -- For labels: `label:` in C and `:label:` in Lua.
 		TSOperator = { fg = nord.nord9_gui }, -- For any operator: `+`, but also `->` and `*` in C.
-		TSParameter = { fg = nord.nord4_gui, style = "bold" }, -- For parameters of a function.
+		TSParameter = { fg = nord.nord4_gui }, -- For parameters of a function.
 		TSParameterReference = { fg = nord.nord10_gui }, -- For references to parameters of a function.
 		TSPunctDelimiter = { fg = nord.nord5_gui }, -- For delimiters ie: `.`
 		TSPunctBracket = { fg = nord.nord5_gui }, -- For brackets and parens.
@@ -280,7 +280,7 @@ theme.loadTreeSitter = function()
 		-- Comments
 		treesitter.TSComment = { fg = nord.nord3_gui_bright }
 		-- Namespaces and property accessors
-		treesitter.TSField = { fg = nord.nord4_gui } -- For fields in literals
+		treesitter.TSField = { fg = nord.nord10_gui } -- For fields in literals
 		treesitter.TSProperty = { fg = nord.nord10_gui } -- Same as `TSField`
 		-- Strings
 		treesitter.TSString = { fg = nord.nord14_gui } -- For strings.
@@ -291,7 +291,7 @@ theme.loadTreeSitter = function()
 		-- Comments
 		treesitter.TSComment = { fg = nord.nord3_gui_bright, style = "italic" }
 		-- Namespaces and property accessors
-		treesitter.TSField = { fg = nord.nord4_gui, style = "italic" } -- For fields.
+		treesitter.TSField = { fg = nord.nord10_gui, style = "italic" } -- For fields.
 		treesitter.TSProperty = { fg = nord.nord10_gui, style = "italic" } -- Same as `TSField`, but when accessing, not declaring.
 		-- Strings
 		treesitter.TSString = { fg = nord.nord14_gui, style = "italic" } -- For strings.
@@ -450,7 +450,7 @@ theme.loadPlugins = function()
 		SneakScope = { bg = nord.nord1_gui },
 
 		-- Cmp
-		CmpItemKind = { fg = nord.nord15_gui },
+		CmpItemKind = { fg = nord.nord4_gui, style = "bold,italic" },
 		CmpItemAbbrMatch = { fg = nord.nord5_gui, style = "bold" },
 		CmpItemAbbrMatchFuzzy = { fg = nord.nord5_gui, style = "bold" },
 		CmpItemAbbr = { fg = nord.nord4_gui },
