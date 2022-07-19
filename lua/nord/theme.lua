@@ -400,15 +400,8 @@ theme.loadPlugins = function()
 		GitSignsDelete = { fg = nord.nord11_gui }, -- diff mode: Deleted line |diff.txt|
 		GitSignsDeleteNr = { fg = nord.nord11_gui }, -- diff mode: Deleted line |diff.txt|
 		GitSignsDeleteLn = { fg = nord.nord11_gui }, -- diff mode: Deleted line |diff.txt|
-
-		-- Telescope
-		TelescopePromptBorder = { fg = nord.nord8_gui },
-		TelescopeResultsBorder = { fg = nord.nord9_gui },
-		TelescopePreviewBorder = { fg = nord.nord14_gui },
-		TelescopeSelectionCaret = { fg = nord.nord9_gui },
-		TelescopeSelection = { fg = nord.nord9_gui },
-		TelescopeMatching = { fg = nord.nord8_gui },
-
+		
+		-- LSP Diagnostics
 		LspDiagnosticsError = { fg = nord.nord11_gui },
 		LspDiagnosticsWarning = { fg = nord.nord13_gui },
 		LspDiagnosticsInformation = { fg = nord.nord10_gui },
