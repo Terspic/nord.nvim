@@ -14,9 +14,12 @@ local nord = (vim.o.background == "dark")
 			nord9_gui = "#81A1C1", -- nord9 in palette
 			nord10_gui = "#5E81AC", -- nord10 in palette
 			nord11_gui = "#BF616A", -- nord11 in palette
+			nord11_gui_bg = "#4D2B2E", -- nord11 in palette
 			nord12_gui = "#D08770", -- nord12 in palette
 			nord13_gui = "#EBCB8B", -- nord13 in palette
+			nord13_gui_bg = "#52452f", -- out of palette
 			nord14_gui = "#A3BE8C", -- nord14 in palette
+			nord14_gui_bg = "#394E3D", -- nord14 in palette
 			nord15_gui = "#B48EAD", -- nord15 in palette
 			none = "NONE",
 		}

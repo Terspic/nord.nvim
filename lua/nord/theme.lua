@@ -77,10 +77,10 @@ theme.loadEditor = function()
 		Cursor = { fg = nord.nord4_gui, bg = nord.none, style = "reverse" }, -- the character under the cursor
 		CursorIM = { fg = nord.nord5_gui, bg = nord.none, style = "reverse" }, -- like Cursor, but used when in IME mode
 		Directory = { fg = nord.nord7_gui, bg = nord.none }, -- directory names (and other special names in listings)
-		DiffAdd = { fg = nord.nord14_gui, bg = nord.none, style = "reverse" }, -- diff mode: Added line
-		DiffChange = { fg = nord.nord13_gui, bg = nord.none, style = "reverse" }, --  diff mode: Changed line
-		DiffDelete = { fg = nord.nord11_gui, bg = nord.none, style = "reverse" }, -- diff mode: Deleted line
-		DiffText = { fg = nord.nord13_gui, bg = nord.none, style = "reverse" }, -- diff mode: Changed text within a changed line
+		DiffAdd = { fg = nord.none, bg = nord.nord14_gui_bg }, -- diff mode: Added line
+		DiffChange = { fg = nord.none, bg = nord.nord13_gui_bg }, --  diff mode: Changed line
+		DiffDelete = { fg = nord.none, bg = nord.nord11_gui_bg }, -- diff mode: Deleted line
+		DiffText = { fg = nord.none, bg = "#6e5d40" }, -- diff mode: Changed text within a changed line
 		EndOfBuffer = { fg = nord.nord1_gui },
 		ErrorMsg = { fg = nord.none },
 		Folded = { fg = nord.nord3_gui_bright, bg = nord.none, style = "italic" },
@@ -154,9 +154,9 @@ theme.loadEditor = function()
 
 		BufferInactive = { bg = nord.nord0_gui, fg = nord.nord3_gui },
 		BufferInactiveMod = { bg = nord.nord0_gui, fg = nord.nord15_gui },
-		BufferInactiveIcon = { bg = nord.nord0_gui , fg = nord.nord3_gui },
-		BufferInactiveSign = { bg = nord.nord0_gui , fg = nord.nord3_gui },
-		BufferInactiveIndex = { bg = nord.nord0_gui , fg = nord.nord3_gui },
+		BufferInactiveIcon = { bg = nord.nord0_gui, fg = nord.nord3_gui },
+		BufferInactiveSign = { bg = nord.nord0_gui, fg = nord.nord3_gui },
+		BufferInactiveIndex = { bg = nord.nord0_gui, fg = nord.nord3_gui },
 		BufferInactiveTarget = { bg = nord.nord0_gui, fg = nord.nord11_gui },
 
 		BufferVisible = { bg = nord.nord2_gui },
@@ -246,7 +246,7 @@ theme.loadTreeSitter = function()
 
 		TSAttribute = { fg = nord.nord12_gui, style = "bold" }, -- (unstable) TODO: docs
 		TSVariable = { fg = nord.nord4_gui }, -- Any variable name that does not have another highlight.
-		TSVariableBuiltin = { fg = nord.nord12_gui},
+		TSVariableBuiltin = { fg = nord.nord12_gui },
 		TSBoolean = { fg = nord.nord15_gui }, -- For booleans.
 		TSConstBuiltin = { fg = nord.nord13_gui, style = "bold" }, -- For constant that are built in the language: `nil` in Lua.
 		TSConstMacro = { fg = nord.nord7_gui, style = "bold" }, -- For constants that are defined by macros: `NULL` in C.
@@ -278,7 +278,7 @@ theme.loadTreeSitter = function()
 
 	if vim.g.nord_italic == false then
 		-- Comments
-		treesitter.TSComment = { fg = nord.nord3_gui_bright }
+		treesitter.TSComment = { fg = nord.nord3_gui_bright, style = "italic" }
 		-- Namespaces and property accessors
 		treesitter.TSField = { fg = nord.nord10_gui } -- For fields in literals
 		treesitter.TSProperty = { fg = nord.nord10_gui } -- Same as `TSField`
@@ -362,9 +362,9 @@ theme.loadPlugins = function()
 	local plugins = {
 
 		-- LspTrouble
-		LspTroubleText = { fg = nord.nord4_gui },
-		LspTroubleCount = { fg = nord.nord9_gui, bg = nord.nord10_gui },
-		LspTroubleNormal = { fg = nord.nord4_gui, bg = nord.sidebar },
+		TroubleText = { fg = nord.nord4_gui },
+		TroubleCount = { fg = nord.nord9_gui, bg = nord.nord10_gui },
+		TroubleNormal = { fg = nord.nord4_gui, bg = nord.sidebar },
 
 		-- Diff
 		diffAdded = { fg = nord.nord14_gui },
@@ -400,7 +400,7 @@ theme.loadPlugins = function()
 		GitSignsDelete = { fg = nord.nord11_gui }, -- diff mode: Deleted line |diff.txt|
 		GitSignsDeleteNr = { fg = nord.nord11_gui }, -- diff mode: Deleted line |diff.txt|
 		GitSignsDeleteLn = { fg = nord.nord11_gui }, -- diff mode: Deleted line |diff.txt|
-		
+
 		-- LSP Diagnostics
 		LspDiagnosticsError = { fg = nord.nord11_gui },
 		LspDiagnosticsWarning = { fg = nord.nord13_gui },
@@ -463,24 +463,24 @@ theme.loadPlugins = function()
 
 		-- nvim-dap-ui
 		DapUIVariable = { fg = nord.nord4_gui },
-                DapUIScope = { fg = nord.nord8_gui },
-                DapUIType = { fg = nord.nord9_gui },
-                DapUIValue = { fg = nord.nord4_gui },
-                DapUIModifiedValue = { fg = nord.nord8_gui },
-                DapUIDecoration = { fg = nord.nord8_gui },
-                DapUIThread = { fg = nord.nord8_gui },
-                DapUIStoppedThread = { fg = nord.nord8_gui },
-                DapUIFrameName = { fg = nord.nord4_gui },
-                DapUISource = { fg = nord.nord9_gui },
-                DapUILineNumber = { fg = nord.nord8_gui },
-                DapUIFloatBorder = { fg = nord.nord8_gui },
-                DapUIWatchesEmpty = { fg = nord.nord11_gui },
-                DapUIWatchesValue = { fg = nord.nord8_gui },
-                DapUIWatchesError = { fg = nord.nord11_gui },
-                DapUIBreakpointsPath = { fg = nord.nord8_gui },
-                DapUIBreakpointsInfo = { fg = nord.nord8_gui },
-                DapUIBreakpointsCurrentLine = { fg = nord.nord8_gui },
-                DapUIBreakpointsLine = { fg = nord.nord8_gui },
+		DapUIScope = { fg = nord.nord8_gui },
+		DapUIType = { fg = nord.nord9_gui },
+		DapUIValue = { fg = nord.nord4_gui },
+		DapUIModifiedValue = { fg = nord.nord8_gui },
+		DapUIDecoration = { fg = nord.nord8_gui },
+		DapUIThread = { fg = nord.nord8_gui },
+		DapUIStoppedThread = { fg = nord.nord8_gui },
+		DapUIFrameName = { fg = nord.nord4_gui },
+		DapUISource = { fg = nord.nord9_gui },
+		DapUILineNumber = { fg = nord.nord8_gui },
+		DapUIFloatBorder = { fg = nord.nord8_gui },
+		DapUIWatchesEmpty = { fg = nord.nord11_gui },
+		DapUIWatchesValue = { fg = nord.nord8_gui },
+		DapUIWatchesError = { fg = nord.nord11_gui },
+		DapUIBreakpointsPath = { fg = nord.nord8_gui },
+		DapUIBreakpointsInfo = { fg = nord.nord8_gui },
+		DapUIBreakpointsCurrentLine = { fg = nord.nord8_gui },
+		DapUIBreakpointsLine = { fg = nord.nord8_gui },
 
 		-- Hop
 		HopNextKey = { fg = nord.nord4_gui, style = "bold" },
@@ -535,6 +535,11 @@ theme.loadPlugins = function()
 		plugins.NvimTreeNormal = { fg = nord.nord4_gui, bg = nord.none }
 	end
 
+	if vim.g.nord_enable_sidebar_background then
+		plugins.TroubleNormal = { fg = nord.nord4_gui, bg = nord.sidebar }
+	else
+		plugins.TroubleNormal = { fg = nord.nord4_gui, bg = nord.none }
+	end
 	return plugins
 end
 
