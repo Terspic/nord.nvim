@@ -2,7 +2,9 @@
 -- MIT license, see LICENSE for more details.
 -- stylua: ignore
 local colors = {
+  nord0 = "#2e3440",
   nord1  = '#3B4252',
+  nord2  = "#434c5e",
   nord3  = '#4C566A',
   nord5  = '#E5E9F0',
   nord6  = '#ECEFF4',
@@ -15,8 +17,8 @@ local colors = {
 return {
   normal = {
     a = { fg = colors.nord1, bg = colors.nord9, gui = 'bold' },
-    b = { fg = colors.nord5, bg = colors.nord1 },
-    c = { fg = colors.nord5, bg = colors.nord3 },
+    b = { fg = colors.nord5, bg = colors.nord0 },
+    c = { fg = colors.nord5, bg = colors.nord1 },
   },
   insert = { a = { fg = colors.nord1, bg = colors.nord6, gui = 'bold' } },
   visual = { a = { fg = colors.nord1, bg = colors.nord7, gui = 'bold' } },

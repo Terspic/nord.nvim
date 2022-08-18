@@ -291,8 +291,8 @@ theme.loadTreeSitter = function()
 		-- Comments
 		treesitter.TSComment = { fg = nord.nord3_gui_bright, style = "italic" }
 		-- Namespaces and property accessors
-		treesitter.TSField = { fg = nord.nord10_gui, style = "italic" } -- For fields.
-		treesitter.TSProperty = { fg = nord.nord10_gui, style = "italic" } -- Same as `TSField`, but when accessing, not declaring.
+		treesitter.TSField = { fg = nord.nord10_gui} -- For fields.
+		treesitter.TSProperty = { fg = nord.nord10_gui } -- Same as `TSField`, but when accessing, not declaring.
 		-- Strings
 		treesitter.TSString = { fg = nord.nord14_gui, style = "italic" } -- For strings.
 		treesitter.TSStringRegex = { fg = nord.nord7_gui, style = "italic" } -- For regexes.
