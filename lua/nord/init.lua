@@ -9,4 +9,4 @@ local set = function()
 	util.load()
 end
 
-return { set = set }
+return { set = set, colors = require('nord.colors') }
